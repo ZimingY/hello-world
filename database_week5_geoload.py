@@ -1,3 +1,6 @@
+# have a file contained palces. output a database [address, geodata from google_map_api]
+# connect to api; create database; read file line by line; retrieve the geodata from url; save to database
+
 import urllib.request, urllib.parse, urllib.error
 import http
 import sqlite3
