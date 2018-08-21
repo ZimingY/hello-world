@@ -1,3 +1,6 @@
+# have database[address geodata], output the where.js contained [address lat lng]
+
+
 import sqlite3
 import json
 import codecs
