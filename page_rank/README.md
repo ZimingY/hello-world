@@ -24,6 +24,8 @@
    
    
 - [`sprank.py`]()
+  Save a previos rank using current rank. 
 
   >smart usage:
   - `conn = sqlite3.connect('spider.sqlite'). cur = conn.cursor()` read a database
+  - `for (node, old_rank) in list(prev_ranks.items()):`, fetch a pair in the __dictionary__
