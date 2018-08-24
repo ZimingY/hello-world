@@ -8,3 +8,4 @@
   |links| a many to many table|
   |---|---|
   |from_id|to_id|
+  | | | 
