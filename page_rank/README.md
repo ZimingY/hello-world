@@ -1,4 +1,4 @@
-- `spider.py` to create a database. Fill in where html is Null, 
+- `spider.py` to create a database. have a web to initialize, initial rank is 1,  __database__, open __url__, __html__, __html.parser__, __BeautifulSoup__, __anchor tags__, find url in a webpage.
 
   |pages|  | | | | |
   |-----|-----|-----|-----|-----|-----|
@@ -10,6 +10,13 @@
   |from_id|to_id|
   | | | 
   
+  |webs|
+  |----|
+  |url|
+  
   >smart usage:
-  - starturl = starturl[:-1] start to end-1
-  - pos = starturl.rfind('/') find from the right side
+  - `starturl = starturl[:-1]` start to end-1
+  - `pos = starturl.rfind('/')` find from the right side
+  - select from a sql, get a tuple, if only one, need a ',' behind.
+  -  `tags = soup('a')`, Retrieve all of the anchor tags
+   
