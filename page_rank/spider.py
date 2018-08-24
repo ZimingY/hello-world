@@ -24,6 +24,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Links
 cur.execute('''CREATE TABLE IF NOT EXISTS Webs (url TEXT UNIQUE)''')
 
 # Check to see if we are already in progress...
+# initialize the table, give it a start point
 cur.execute('SELECT id,url FROM Pages WHERE html is NULL and error is NULL ORDER BY RANDOM() LIMIT 1')
 row = cur.fetchone()
 if row is not None:
@@ -47,7 +48,6 @@ cur.execute('''SELECT url FROM Webs''')
 webs = list()
 for row in cur:
     webs.append(str(row[0]))
-
 print(webs)
 
 many = 0
@@ -77,14 +77,14 @@ while True:
         document = urlopen(url, context=ctx)
 
         html = document.read()
-        if document.getcode() != 200 :
+        if document.getcode() != 200 : # if it is 200, then normal
             print("Error on page: ",document.getcode())
             cur.execute('UPDATE Pages SET error=? WHERE url=?', (document.getcode(), url) )
 
         if 'text/html' != document.info().get_content_type() :
             print("Ignore non text/html page")
             cur.execute('DELETE FROM Pages WHERE url=?', ( url, ) )
-            cur.execute('UPDATE Pages SET error=0 WHERE url=?', (url, ) )
+            cur.execute('UPDATE Pages SET error=0 WHERE url=?', (url, ) )# could be deleted
             conn.commit()
             continue
 
@@ -109,7 +109,7 @@ while True:
     tags = soup('a')
     count = 0
     for tag in tags:
-        href = tag.get('href', None)
+        href = tag.get('href', None) # if do not have, return None
         if ( href is None ) : continue
         # Resolve relative references like href="/contact"
         up = urlparse(href)
