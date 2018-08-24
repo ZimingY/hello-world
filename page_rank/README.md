@@ -1,4 +1,4 @@
-- `spider.py` to create a database.  
+- `spider.py` to create a database. Fill in where html is Null, 
 
   |pages|  | | | | |
   |-----|-----|-----|-----|-----|-----|
@@ -9,3 +9,7 @@
   |---|---|
   |from_id|to_id|
   | | | 
+  
+  >smart usage:
+  - starturl = starturl[:-1] start to end-1
+  - pos = starturl.rfind('/') find from the right side
