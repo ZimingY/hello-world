@@ -23,5 +23,7 @@
   -  `tags = soup('a')`, Retrieve all of the anchor tags
    
    
-- ['sprank.py']()
+- [`sprank.py`]()
 
+  >smart usage:
+  - `conn = sqlite3.connect('spider.sqlite'). cur = conn.cursor()` read a database
