@@ -22,3 +22,6 @@
   - select from a sql, get a tuple, if only one, need a ',' behind.
   -  `tags = soup('a')`, Retrieve all of the anchor tags
    
+   
+- ['sprank.py']()
+
