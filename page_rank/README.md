@@ -31,4 +31,4 @@
   - `for (node, old_rank) in list(prev_ranks.items()):`, fetch a pair in the __dictionary__
 
 
-- [`spjson.py`](https://github.com/ZimingY/hello-world/new/master/page_rank/spjson.py)
+- [`spjson.py`](https://github.com/ZimingY/hello-world/blob/master/page_rank/spjson.py)
